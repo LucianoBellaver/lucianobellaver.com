@@ -1,43 +1,4 @@
-"use client";
-
-import { useEffect, useState } from "react";
-
 export default function Home() {
-  const [boot, setBoot] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setBoot(false);
-    }, 2500);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (boot) {
-    return (
-      <main className="min-h-screen bg-black text-green-400 flex items-center justify-center font-mono">
-        <div className="max-w-xl w-full px-6">
-          <p className="text-xl mb-6 animate-pulse">
-            Initializing Luciano Bellaver System...
-          </p>
-
-          <div className="space-y-2 text-sm">
-            <p>[OK] Embedded Systems</p>
-            <p>[OK] Hardware Engineering</p>
-            <p>[OK] Robotics Research</p>
-            <p>[OK] Open Source Projects</p>
-            <p>[OK] Space Technology</p>
-          </div>
-
-          <p className="mt-8">
-            SYSTEM ONLINE_
-          </p>
-        </div>
-      </main>
-    );
-  }
-
-
   return (
     <main className="min-h-screen bg-black text-white overflow-hidden">
 
@@ -48,12 +9,13 @@ export default function Home() {
 
       <section className="relative min-h-screen flex flex-col justify-center px-8 max-w-6xl mx-auto">
 
-        <p className="text-green-400 font-mono mb-4">
+
+        <p className="text-orange-500 font-mono mb-4">
           ENGINEERING LAB / 001
         </p>
 
 
-        <h1 className="text-6xl font-bold tracking-tight">
+        <h1 className="text-6xl font-bold tracking-tight animate-fade-up">
           Luciano Bellaver
         </h1>
 
@@ -72,7 +34,7 @@ export default function Home() {
 
         <div className="flex gap-4 mt-10">
 
-          <button className="border border-green-400 text-green-400 px-6 py-3 rounded hover:bg-green-400 hover:text-black transition">
+          <button className="border border-orange-500 text-orange-500 px-6 py-3 rounded hover:bg-orange-500 hover:text-black transition">
             Projects
           </button>
 
@@ -95,9 +57,10 @@ export default function Home() {
 
             <div
               key={item}
-              className="border border-gray-700 p-5 rounded bg-black/50"
+              className="border border-gray-700 p-5 rounded bg-black/50 hover:border-green-400 transition"
             >
-              <p className="text-green-400 font-mono">
+
+              <p className="text-orange-500 font-mono">
                 MODULE
               </p>
 
@@ -113,6 +76,7 @@ export default function Home() {
 
 
       </section>
+
 
     </main>
   );
