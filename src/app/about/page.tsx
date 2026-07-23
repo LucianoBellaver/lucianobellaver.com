@@ -7,11 +7,11 @@ export default function About() {
             <section className="max-w-6xl mx-auto px-8">
 
 
-                {/* Header */}
+                {/* Cabeçalho */}
                 <div className="mb-20">
 
                     <p className="font-mono text-orange-500 mb-4">
-                        III ABOUT
+                        III SOBRE
                     </p>
 
                 </div>
@@ -27,7 +27,6 @@ export default function About() {
 
                     {/* Foto */}
                     <div>
-
 
                         <div
                             className="
@@ -57,18 +56,18 @@ export default function About() {
 
 
 
-                        {/* Status */}
+                        {/* Informações */}
                         <div className="mt-10 border-t border-white/10 font-mono text-sm">
 
 
                             <div className="flex justify-between py-4 border-b border-white/10">
 
                                 <span className="text-gray-500 tracking-widest">
-                                    BASED IN
+                                    LOCALIZAÇÃO
                                 </span>
 
                                 <span className="text-gray-200">
-                                    Brazil
+                                    Brasil
                                 </span>
 
                             </div>
@@ -79,11 +78,11 @@ export default function About() {
                             <div className="flex justify-between py-4 border-b border-white/10 gap-4">
 
                                 <span className="text-gray-500 tracking-widest">
-                                    CURRENTLY
+                                    ATUALMENTE
                                 </span>
 
                                 <span className="text-gray-200 text-right">
-                                    Computer Engineering Student
+                                    Estudante de Engenharia da Computação
                                 </span>
 
                             </div>
@@ -94,11 +93,11 @@ export default function About() {
                             <div className="flex justify-between py-4 border-b border-white/10">
 
                                 <span className="text-gray-500 tracking-widest">
-                                    STUDYING
+                                    CURSANDO
                                 </span>
 
                                 <span className="text-gray-200 text-right">
-                                    Computer Engineering
+                                    Engenharia de Computação
                                 </span>
 
                             </div>
@@ -109,15 +108,15 @@ export default function About() {
                             <div className="flex justify-between py-4 gap-4">
 
                                 <span className="text-gray-500 tracking-widest">
-                                    FOCUS
+                                    FOCO
                                 </span>
 
                                 <span className="text-gray-200 text-right">
-                                    Embedded Systems
+                                    Sistemas Embarcados
                                     <br />
                                     Hardware
                                     <br />
-                                    Robotics
+                                    Robótica
                                 </span>
 
                             </div>
@@ -139,43 +138,25 @@ export default function About() {
                     {/* Bio */}
                     <div className="max-w-3xl pt-2">
 
-
                         <div className="space-y-10 text-gray-300 text-xl leading-9">
 
-
                             <p>
-                                I am a Computer Engineering student focused on building
-                                systems that connect software with the physical world.
+                                Sou estudante de Engenharia da Computação e tenho como principal objetivo desenvolver sistemas que unem software e hardware para resolver problemas do mundo real.
                             </p>
 
-
-
                             <p>
-                                My interests are centered around embedded systems,
-                                hardware development, robotics and open-source projects.
-                                I enjoy understanding how things work at the lowest level,
-                                from electronics and firmware to complete systems.
+                                Meus principais interesses estão em sistemas embarcados, desenvolvimento de hardware, robótica e projetos open source. Tenho grande curiosidade em compreender o funcionamento da tecnologia em seus níveis mais fundamentais, desde eletrônica e firmware até sistemas completos.
                             </p>
 
-
-
                             <p>
-                                Currently, I am developing my skills through personal
-                                projects involving embedded platforms, 3D printing,
-                                automation and hardware experimentation.
+                                Atualmente desenvolvo projetos pessoais envolvendo impressão 3D, automação, plataformas embarcadas e experimentação com hardware, buscando constantemente expandir meus conhecimentos por meio da prática.
                             </p>
 
-
-
                             <p>
-                                My long-term goal is to work with advanced technologies
-                                related to robotics and space systems, contributing to
-                                projects that push engineering beyond everyday limits.
+                                Meu objetivo de longo prazo é atuar no desenvolvimento de tecnologias avançadas voltadas para robótica e sistemas espaciais, contribuindo para projetos que ampliem os limites da engenharia e da exploração tecnológica.
                             </p>
-
 
                         </div>
-
 
                     </div>
 
@@ -190,25 +171,20 @@ export default function About() {
 
 
 
-                {/* Areas */}
+                {/* Áreas */}
                 <div className="mt-32">
 
-
                     <h2 className="font-mono text-orange-500 mb-8">
-                        FOCUS AREAS
+                        ÁREAS DE INTERESSE
                     </h2>
-
-
-
 
                     <div className="grid md:grid-cols-4 gap-4">
 
-
                         {[
-                            "Embedded Systems",
-                            "Hardware Design",
-                            "Robotics",
-                            "Space Technology",
+                            "Sistemas Embarcados",
+                            "Projeto de Hardware",
+                            "Robótica",
+                            "Tecnologias Espaciais",
                         ].map((item) => (
 
                             <div
@@ -231,15 +207,12 @@ export default function About() {
 
                         ))}
 
-
                     </div>
-
 
                 </div>
 
 
             </section>
-
 
         </main>
     );

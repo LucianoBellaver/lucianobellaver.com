@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import ReactCountryFlag from "react-country-flag";
+import Search from "@/components/Search";
 
 
 export default function Navbar() {
@@ -16,7 +17,7 @@ export default function Navbar() {
     const links = [
         {
             number: "I",
-            name: "Projects",
+            name: "Projetos",
             href: "/projects",
         },
         {
@@ -26,14 +27,16 @@ export default function Navbar() {
         },
         {
             number: "III",
-            name: "About",
+            name: "Sobre",
             href: "/about",
         },
     ];
 
 
+
     return (
         <header className="fixed top-0 left-0 w-full z-50 border-b border-white/10 bg-black/80 backdrop-blur">
+
 
             <nav className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
 
@@ -50,12 +53,17 @@ export default function Navbar() {
 
 
 
-                {/* Links */}
+
+
+                {/* Navegação */}
                 <div className="hidden md:flex items-center gap-8 font-mono text-sm text-gray-400">
+
 
                     {links.map((link) => {
 
+
                         const active = pathname === link.href;
+
 
 
                         return (
@@ -75,22 +83,33 @@ export default function Navbar() {
                                     {link.number}
                                 </span>
 
+
                                 {" "}
 
+
                                 {link.name}
+
 
                             </Link>
                         );
 
+
                     })}
+
 
                 </div>
 
 
 
 
-                {/* Direita */}
+
+
+
+                {/* Lado direito */}
                 <div className="flex items-center gap-4">
+
+
+
 
 
                     {/* Idioma */}
@@ -100,15 +119,16 @@ export default function Navbar() {
                         <button
                             onClick={() => setLanguageOpen(!languageOpen)}
                             className="
-        flex
-        items-center
-        gap-2
-        font-mono
-        text-sm
-        hover:text-orange-500
-        transition
-        "
+                                flex
+                                items-center
+                                gap-2
+                                font-mono
+                                text-sm
+                                hover:text-orange-500
+                                transition
+                            "
                         >
+
 
                             <ReactCountryFlag
                                 countryCode="BR"
@@ -119,13 +139,19 @@ export default function Navbar() {
                                 }}
                             />
 
+
                             PT
+
 
                             <span>
                                 ▾
                             </span>
 
+
                         </button>
+
+
+
 
 
 
@@ -133,111 +159,122 @@ export default function Navbar() {
 
                             <div
                                 className="
-            absolute
-            right-0
-            mt-4
-            w-40
-            border
-            border-white/20
-            bg-black
-            rounded-md
-            overflow-hidden
-            "
+                                    absolute
+                                    right-0
+                                    mt-4
+                                    w-40
+                                    border
+                                    border-white/20
+                                    bg-black
+                                    rounded-md
+                                    overflow-hidden
+                                "
                             >
+
 
                                 <button
                                     className="
-                w-full
-                px-4
-                py-3
-                text-left
-                font-mono
-                text-sm
-                hover:bg-white/10
-                transition
-                "
+                                        w-full
+                                        px-4
+                                        py-3
+                                        text-left
+                                        font-mono
+                                        text-sm
+                                        hover:bg-white/10
+                                        transition
+                                    "
                                 >
                                     🇧🇷 Português
                                 </button>
 
 
+
+
                                 <button
                                     className="
-                w-full
-                px-4
-                py-3
-                text-left
-                font-mono
-                text-sm
-                hover:bg-white/10
-                transition
-                "
+                                        w-full
+                                        px-4
+                                        py-3
+                                        text-left
+                                        font-mono
+                                        text-sm
+                                        hover:bg-white/10
+                                        transition
+                                    "
                                 >
                                     🇺🇸 English
                                 </button>
 
 
+
+
+
                                 <button
                                     className="
-                                    w-full
-                                    px-4
-                                    py-3
-                                    text-left
-                                    font-mono
-                                    text-sm
-                                    hover:bg-white/10
-                                    transition
-                                 "
+                                        w-full
+                                        px-4
+                                        py-3
+                                        text-left
+                                        font-mono
+                                        text-sm
+                                        hover:bg-white/10
+                                        transition
+                                    "
                                 >
                                     🇯🇵 日本語
                                 </button>
+
 
 
                             </div>
 
                         )}
 
+
+
                     </div>
 
-                    {/* Search */}
-                    <button
-                        className="
-                        hidden md:block
-                        border border-white/20
-                        px-4 py-2
-                        rounded-md
-                        text-sm
-                        font-mono
-                        hover:border-orange-500
-                        transition
-                        "
-                    >
-                        Search
-                    </button>
 
 
 
-                    {/* Contact */}
+
+
+
+                    {/* Pesquisa */}
+                    <Search />
+
+
+
+
+
+
+
+                    {/* Contato */}
                     <a
-                        href="mailto:seuemail@email.com"
+                        href="mailto:lucianobellaver@gmail.com"
                         className="
-                        border border-white/20
-                        px-4 py-2
-                        rounded-md
-                        text-sm
-                        hover:bg-orange-500
-                        hover:text-black
-                        transition
+                            border
+                            border-white/20
+                            px-4
+                            py-2
+                            rounded-md
+                            text-sm
+                            hover:bg-orange-500
+                            hover:text-black
+                            transition
                         "
                     >
-                        Contact
+                        Contato
                     </a>
+
 
 
                 </div>
 
 
+
             </nav>
+
 
         </header>
     );
