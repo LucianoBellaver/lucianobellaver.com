@@ -4,15 +4,14 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import ReactCountryFlag from "react-country-flag";
+import { Menu, X } from "lucide-react";
 import Search from "@/components/Search";
 
-
 export default function Navbar() {
-
     const pathname = usePathname();
 
     const [languageOpen, setLanguageOpen] = useState(false);
-
+    const [menuOpen, setMenuOpen] = useState(false);
 
     const links = [
         {
@@ -32,250 +31,214 @@ export default function Navbar() {
         },
     ];
 
-
-
     return (
-        <header className="fixed top-0 left-0 w-full z-50 border-b border-white/10 bg-black/80 backdrop-blur">
+        <>
+            <header className="fixed top-0 left-0 w-full z-50 border-b border-white/10 bg-black/80 backdrop-blur">
 
+                <nav className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
 
-            <nav className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+                    {/* Logo */}
+                    <Link
+                        href="/"
+                        className="font-mono text-sm tracking-widest hover:text-gray-300 transition"
+                    >
+                        LUCIANO
+                        <span className="text-orange-500">.</span>
+                        BELLAVER
+                    </Link>
 
+                    {/* Navegação Desktop */}
+                    <div className="hidden lg:flex items-center gap-8 font-mono text-sm text-gray-400">
 
-                {/* Logo */}
-                <Link
-                    href="/"
-                    className="font-mono text-sm tracking-widest hover:text-gray-300 transition"
-                >
-                    LUCIANO
-                    <span className="text-orange-500">.</span>
-                    BELLAVER
-                </Link>
+                        {links.map((link) => {
 
+                            const active = pathname === link.href;
 
-
-
-
-                {/* Navegação */}
-                <div className="hidden md:flex items-center gap-8 font-mono text-sm text-gray-400">
-
-
-                    {links.map((link) => {
-
-
-                        const active = pathname === link.href;
-
-
-
-                        return (
-                            <Link
-                                key={link.href}
-                                href={link.href}
-                                className="hover:text-white transition"
-                            >
-
-                                <span
-                                    className={
-                                        active
-                                            ? "text-orange-500"
-                                            : "text-gray-400"
-                                    }
+                            return (
+                                <Link
+                                    key={link.href}
+                                    href={link.href}
+                                    className="hover:text-white transition"
                                 >
-                                    {link.number}
-                                </span>
+                                    <span
+                                        className={
+                                            active
+                                                ? "text-orange-500"
+                                                : "text-gray-400"
+                                        }
+                                    >
+                                        {link.number}
+                                    </span>
 
+                                    {" "}
 
-                                {" "}
+                                    {link.name}
 
+                                </Link>
+                            );
 
-                                {link.name}
-
-
-                            </Link>
-                        );
-
-
-                    })}
-
-
-                </div>
-
-
-
-
-
-
-
-                {/* Lado direito */}
-                <div className="flex items-center gap-4">
-
-
-
-
-
-                    {/* Idioma */}
-                    <div className="relative">
-
-
-                        <button
-                            onClick={() => setLanguageOpen(!languageOpen)}
-                            className="
-                                flex
-                                items-center
-                                gap-2
-                                font-mono
-                                text-sm
-                                hover:text-orange-500
-                                transition
-                            "
-                        >
-
-
-                            <ReactCountryFlag
-                                countryCode="BR"
-                                svg
-                                style={{
-                                    width: "1.2em",
-                                    height: "1.2em",
-                                }}
-                            />
-
-
-                            PT
-
-
-                            <span>
-                                ▾
-                            </span>
-
-
-                        </button>
-
-
-
-
-
-
-                        {languageOpen && (
-
-                            <div
-                                className="
-                                    absolute
-                                    right-0
-                                    mt-4
-                                    w-40
-                                    border
-                                    border-white/20
-                                    bg-black
-                                    rounded-md
-                                    overflow-hidden
-                                "
-                            >
-
-
-                                <button
-                                    className="
-                                        w-full
-                                        px-4
-                                        py-3
-                                        text-left
-                                        font-mono
-                                        text-sm
-                                        hover:bg-white/10
-                                        transition
-                                    "
-                                >
-                                    🇧🇷 Português
-                                </button>
-
-
-
-
-                                <button
-                                    className="
-                                        w-full
-                                        px-4
-                                        py-3
-                                        text-left
-                                        font-mono
-                                        text-sm
-                                        hover:bg-white/10
-                                        transition
-                                    "
-                                >
-                                    🇺🇸 English
-                                </button>
-
-
-
-
-
-                                <button
-                                    className="
-                                        w-full
-                                        px-4
-                                        py-3
-                                        text-left
-                                        font-mono
-                                        text-sm
-                                        hover:bg-white/10
-                                        transition
-                                    "
-                                >
-                                    🇯🇵 日本語
-                                </button>
-
-
-
-                            </div>
-
-                        )}
-
-
+                        })}
 
                     </div>
 
+                    {/* Lado direito Desktop */}
+                    <div className="hidden lg:flex items-center gap-4">
 
+                        {/* Idioma */}
+                        <div className="relative">
 
+                            <button
+                                onClick={() => setLanguageOpen(!languageOpen)}
+                                className="
+                                    flex
+                                    items-center
+                                    gap-2
+                                    font-mono
+                                    text-sm
+                                    hover:text-orange-500
+                                    transition
+                                "
+                            >
 
+                                <ReactCountryFlag
+                                    countryCode="BR"
+                                    svg
+                                    style={{
+                                        width: "1.2em",
+                                        height: "1.2em",
+                                    }}
+                                />
 
+                                PT
 
+                                <span>▾</span>
 
-                    {/* Pesquisa */}
-                    <Search />
+                            </button>
 
+                            {languageOpen && (
 
+                                <div
+                                    className="
+                                        absolute
+                                        right-0
+                                        mt-4
+                                        w-40
+                                        border
+                                        border-white/20
+                                        bg-black
+                                        rounded-md
+                                        overflow-hidden
+                                    "
+                                >
 
+                                    <button className="w-full px-4 py-3 text-left font-mono text-sm hover:bg-white/10 transition">
+                                        🇧🇷 Português
+                                    </button>
 
+                                    <button className="w-full px-4 py-3 text-left font-mono text-sm hover:bg-white/10 transition">
+                                        🇺🇸 English
+                                    </button>
 
+                                    <button className="w-full px-4 py-3 text-left font-mono text-sm hover:bg-white/10 transition">
+                                        🇯🇵 日本語
+                                    </button>
 
+                                </div>
 
-                    {/* Contato */}
-                    <a
-                        href="mailto:lucianobellaver@gmail.com"
-                        className="
-                            border
-                            border-white/20
-                            px-4
-                            py-2
-                            rounded-md
-                            text-sm
-                            hover:bg-orange-500
-                            hover:text-black
-                            transition
-                        "
+                            )}
+
+                        </div>
+
+                        <Search />
+
+                        <a
+                            href="mailto:lucianobellaver@gmail.com"
+                            className="
+                                border
+                                border-white/20
+                                px-4
+                                py-2
+                                rounded-md
+                                text-sm
+                                hover:bg-orange-500
+                                hover:text-black
+                                transition
+                            "
+                        >
+                            Contato
+                        </a>
+
+                    </div>
+
+                    {/* Botão Mobile */}
+                    <button
+                        onClick={() => setMenuOpen(true)}
+                        className="lg:hidden"
                     >
-                        Contato
-                    </a>
+                        <Menu size={28} />
+                    </button>
 
+                </nav>
 
+            </header>
+
+            {/* Fundo escurecido */}
+            {menuOpen && (
+                <div
+                    onClick={() => setMenuOpen(false)}
+                    className="fixed inset-0 bg-black/60 z-40"
+                />
+            )}
+
+            {/* Menu Mobile */}
+            <aside
+                className={`
+                    fixed
+                    top-0
+                    right-0
+                    h-full
+                    w-72
+                    bg-black
+                    border-l
+                    border-white/10
+                    z-50
+                    transform
+                    transition-transform
+                    duration-300
+                    ${menuOpen ? "translate-x-0" : "translate-x-full"}
+                `}
+            >
+
+                <div className="flex justify-between items-center p-6 border-b border-white/10">
+
+                    <h2 className="font-mono tracking-wider">
+                        MENU
+                    </h2>
+
+                    <button onClick={() => setMenuOpen(false)}>
+                        <X size={24} />
+                    </button>
 
                 </div>
 
+                <div className="flex flex-col p-6 gap-6">
 
+                    {links.map((link) => (
 
-            </nav>
+                        <Link
+                            key={link.href}
+                            href={link.href}
+                            onClick={() => setMenuOpen(false)}
+                            className="font-mono hover:text-orange-500 transition"
+                        >
+                            {link.name}
+                        </Link>
 
+                    ))}
 
-        </header>
+                </div>
+
+            </aside>
+        </>
     );
 }
