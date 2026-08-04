@@ -1,6 +1,6 @@
 export default function Blog() {
     return (
-        <main className="min-h-screen bg-black text-white pt-32">
+        <main className="min-h-screen bg-[#1f1f23] text-white pt-32">
             <section className="max-w-6xl mx-auto px-8">
                 <p className="font-mono text-orange-500 mb-4">
                     II BLOG

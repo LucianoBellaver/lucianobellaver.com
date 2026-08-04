@@ -5,17 +5,33 @@ import { projects } from "@/data/projects";
 
 export default function Projects() {
     return (
-        <main className="min-h-screen bg-black text-white pt-32">
-            <section className="max-w-6xl mx-auto px-8">
-                <p className="font-mono text-orange-500 mb-4">
-                    I PROJETOS
-                </p>
+        <main className="min-h-screen bg-[#1f1f23] text-white pt-32 pb-24">
 
-                <h1 className="text-5xl font-bold mb-12">
-                    Projetos
-                </h1>
+            <section className="max-w-6xl mx-auto px-6 sm:px-8">
 
-                <div className="grid md:grid-cols-2 gap-6">
+                {/* Cabeçalho */}
+                <div className="mb-16">
+
+                    <p className="font-mono text-sm tracking-widest text-orange-500">
+                        I PROJETOS
+                    </p>
+
+                    <h1 className="mt-4 text-4xl md:text-5xl font-bold">
+                        Projetos
+                    </h1>
+
+                    <p className="mt-6 max-w-2xl text-gray-400 leading-7">
+                        Uma coleção de projetos desenvolvidos para explorar
+                        hardware, software, automação, sistemas embarcados e
+                        infraestrutura. Cada projeto representa um desafio,
+                        uma oportunidade de aprendizado e uma etapa da minha
+                        evolução como engenheiro.
+                    </p>
+
+                </div>
+
+                {/* Grid */}
+                <div className="grid gap-8 md:grid-cols-2">
 
                     {projects.map((project) => (
 
@@ -23,13 +39,15 @@ export default function Projects() {
                             key={project.slug}
                             href={`/projects/${project.slug}`}
                             className="
-                                block
+                                group
+                                overflow-hidden
+                                rounded-lg
                                 border
                                 border-white/20
-                                rounded-lg
-                                overflow-hidden
+                                transition-all
+                                duration-300
                                 hover:border-orange-500
-                                transition
+                                hover:-translate-y-1
                             "
                         >
 
@@ -39,34 +57,38 @@ export default function Projects() {
                                 width={800}
                                 height={450}
                                 className="
+                                    h-52
                                     w-full
-                                    h-56
                                     object-cover
+                                    transition-transform
+                                    duration-500
+                                    group-hover:scale-[1.03]
+                                    md:h-56
                                 "
                             />
 
                             <div className="p-6">
 
-                                <h2 className="text-2xl mb-4">
+                                <h2 className="text-2xl font-semibold">
                                     {project.title}
                                 </h2>
 
-                                <p className="text-gray-400 mb-6">
+                                <p className="mt-4 text-gray-400 leading-7">
                                     {project.description}
                                 </p>
 
-                                <div className="flex flex-wrap gap-2">
+                                <div className="mt-6 flex flex-wrap gap-2">
 
                                     {project.technologies.map((tech) => (
 
                                         <span
                                             key={tech}
                                             className="
-                                                px-3
-                                                py-1
+                                                rounded
                                                 border
                                                 border-white/20
-                                                rounded
+                                                px-3
+                                                py-1
                                                 text-sm
                                                 font-mono
                                                 text-gray-300
@@ -88,6 +110,7 @@ export default function Projects() {
                 </div>
 
             </section>
+
         </main>
     );
 }

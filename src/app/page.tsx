@@ -1,8 +1,9 @@
 import Link from "next/link";
+import { projects } from "@/data/projects";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-black text-white">
+    <main className="relative min-h-screen overflow-hidden bg-[#1f1f23] text-white">
 
       {/* Grid de fundo */}
       <div className="absolute inset-0 opacity-20 pointer-events-none">
@@ -11,23 +12,23 @@ export default function Home() {
 
       <section
         className="
-                    relative
-                    z-10
-                    mx-auto
-                    flex
-                    min-h-screen
-                    w-full
-                    max-w-6xl
-                    flex-col
-                    justify-center
-                    px-6
-                    pt-32
-                    pb-16
-                    text-center
-                    sm:px-8
-                    lg:px-10
-                    lg:text-left
-                "
+          relative
+          z-10
+          mx-auto
+          flex
+          min-h-screen
+          w-full
+          max-w-6xl
+          flex-col
+          justify-center
+          px-6
+          pt-32
+          pb-24
+          text-center
+          sm:px-8
+          lg:px-10
+          lg:text-left
+        "
       >
 
         <p className="font-mono text-sm text-orange-500">
@@ -36,138 +37,199 @@ export default function Home() {
 
         <h1
           className="
-                        mt-4
-                        text-4xl
-                        font-bold
-                        tracking-tight
-                        animate-fade-up
-                        sm:text-5xl
-                        lg:text-6xl
-                    "
+            mt-4
+            max-w-4xl
+            text-4xl
+            font-bold
+            tracking-tight
+            animate-fade-up
+            sm:text-5xl
+            lg:text-6xl
+          "
         >
-          Site em Construção.
+          Construindo sistemas entre software e mundo físico.
         </h1>
 
         <h2
           className="
-                        mt-5
-                        text-lg
-                        text-gray-400
-                        sm:text-xl
-                        lg:text-2xl
-                    "
+            mt-5
+            text-lg
+            text-gray-400
+            sm:text-xl
+            lg:text-2xl
+          "
         >
-          Estudante de Engenharia da Computação
+          Engenharia da Computação • Sistemas Embarcados • Robótica
         </h2>
 
         <p
           className="
-                        mt-8
-                        max-w-2xl
-                        text-base
-                        leading-7
-                        text-gray-300
-                        sm:text-lg
-                        sm:leading-8
-                        lg:max-w-3xl
-                    "
+            mt-8
+            max-w-2xl
+            text-base
+            leading-7
+            text-gray-300
+            sm:text-lg
+            sm:leading-8
+            lg:max-w-3xl
+          "
         >
-          Desenvolvendo sistemas onde software e hardware trabalham juntos.
-          Apaixonado por sistemas embarcados, robótica, desenvolvimento de
-          hardware e tecnologias espaciais.
+          Sou estudante de Engenharia da Computação e uso este espaço para
+          documentar projetos, experimentos e aprendizados em hardware,
+          automação, infraestrutura e tecnologias que conectam código ao mundo
+          real.
         </p>
 
+        {/* Botão */}
         <div
           className="
-                        mt-10
-                        flex
-                        flex-col
-                        gap-4
-                        sm:flex-row
-                        lg:justify-start
-                    "
+            mt-10
+            flex
+            justify-center
+            lg:justify-start
+          "
         >
 
           <Link
-            href="/projects"
+            href="/about"
             className="
-                            rounded
-                            border
-                            border-orange-500
-                            px-6
-                            py-3
-                            text-center
-                            text-orange-500
-                            transition
-                            hover:bg-orange-500
-                            hover:text-black
-                        "
+              rounded
+              border
+              border-orange-500
+              px-6
+              py-3
+              text-orange-500
+              transition
+              hover:bg-orange-500
+              hover:text-black
+            "
           >
-            Projetos
-          </Link>
-
-          <Link
-            href="/blog"
-            className="
-                            rounded
-                            border
-                            border-white/20
-                            px-6
-                            py-3
-                            text-center
-                            transition
-                            hover:border-orange-500
-                            hover:text-orange-500
-                        "
-          >
-            Blog
+            Sobre mim
           </Link>
 
         </div>
 
-        <div
-          className="
-                        mt-16
-                        grid
-                        grid-cols-1
-                        gap-5
-                        sm:grid-cols-2
-                        lg:mt-20
-                        lg:grid-cols-4
-                    "
-        >
+        {/* Portfólio */}
+        <div className="mt-24">
 
-          {[
-            "Sistemas Embarcados",
-            "Robótica",
-            "Impressão 3D",
-            "Hardware Open Source",
-          ].map((item) => (
+          <p className="font-mono text-sm tracking-widest text-orange-500 mb-8">
+            PORTFÓLIO
+          </p>
 
-            <div
-              key={item}
+          <div
+            className="
+              grid
+              gap-5
+              md:grid-cols-2
+              max-w-4xl
+            "
+          >
+
+            {/* Projetos */}
+
+            <Link
+              href="/projects"
               className="
-                                rounded
-                                border
-                                border-gray-700
-                                bg-black/50
-                                p-6
-                                transition
-                                hover:border-orange-500
-                            "
+                group
+                rounded-lg
+                border
+                border-gray-700
+                bg-black/40
+                p-8
+                transition-all
+                duration-300
+                hover:border-orange-500
+                hover:-translate-y-1
+              "
             >
 
-              <p className="font-mono text-sm text-orange-500">
-                MÓDULO
-              </p>
+              <div className="flex justify-between items-start">
 
-              <p className="mt-3">
-                {item}
-              </p>
+                <div>
 
-            </div>
+                  <p className="text-6xl font-bold">
+                    {projects.length}
+                  </p>
 
-          ))}
+                  <p className="mt-5 font-mono text-sm tracking-widest text-orange-500">
+                    PROJETOS
+                  </p>
+
+                  <p className="mt-2 text-sm text-gray-400">
+                    Publicados
+                  </p>
+
+                </div>
+
+                <span
+                  className="
+                    text-3xl
+                    text-gray-500
+                    transition
+                    group-hover:text-orange-500
+                    group-hover:translate-x-1
+                  "
+                >
+                  →
+                </span>
+
+              </div>
+
+            </Link>
+
+            {/* Blog */}
+
+            <Link
+              href="/blog"
+              className="
+                group
+                rounded-lg
+                border
+                border-gray-700
+                bg-black/40
+                p-8
+                transition-all
+                duration-300
+                hover:border-orange-500
+                hover:-translate-y-1
+              "
+            >
+
+              <div className="flex justify-between items-start">
+
+                <div>
+
+                  <p className="text-6xl font-bold">
+                    0
+                  </p>
+
+                  <p className="mt-5 font-mono text-sm tracking-widest text-orange-500">
+                    ARTIGOS
+                  </p>
+
+                  <p className="mt-2 text-sm text-gray-400">
+                    Publicados
+                  </p>
+
+                </div>
+
+                <span
+                  className="
+                    text-3xl
+                    text-gray-500
+                    transition
+                    group-hover:text-orange-500
+                    group-hover:translate-x-1
+                  "
+                >
+                  →
+                </span>
+
+              </div>
+
+            </Link>
+
+          </div>
 
         </div>
 

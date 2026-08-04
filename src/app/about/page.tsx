@@ -2,36 +2,33 @@ import Image from "next/image";
 
 export default function About() {
     return (
-        <main className="min-h-screen bg-black text-white pt-32">
+        <main className="min-h-screen bg-[#1f1f23] text-white pt-32 pb-24">
 
-            <section className="max-w-6xl mx-auto px-8">
-
+            <section className="max-w-6xl mx-auto px-6 sm:px-8">
 
                 {/* Cabeçalho */}
-                <div className="mb-20">
+                <div className="mb-16">
 
-                    <p className="font-mono text-orange-500 mb-4">
+                    <p className="font-mono text-sm tracking-widest text-orange-500">
                         III SOBRE
                     </p>
 
                 </div>
 
-
-
-
-
                 {/* Perfil */}
-                <div className="grid md:grid-cols-[300px_1fr] gap-32 items-start">
+                <div className="grid lg:grid-cols-[320px_1fr] gap-16 lg:gap-32 items-start">
 
-
-
-                    {/* Foto */}
+                    {/* Coluna Esquerda */}
                     <div>
 
+                        {/* Foto */}
                         <div
                             className="
                                 relative
                                 w-full
+                                max-w-[320px]
+                                mx-auto
+                                lg:mx-0
                                 aspect-square
                                 border
                                 border-white/20
@@ -45,172 +42,297 @@ export default function About() {
                                 src="/images/luciano.jpg"
                                 alt="Luciano Bellaver"
                                 fill
-                                sizes="300px"
                                 priority
+                                sizes="320px"
                                 className="object-cover"
                             />
 
                         </div>
 
+                        {/* Dados */}
+                        <div className="mt-10 font-mono text-sm">
 
+                            {/* Informações principais */}
+                            <div className="border-t border-white/10">
 
+                                <div className="flex justify-between py-4 border-b border-white/10">
 
+                                    <span className="text-gray-500 tracking-widest">
+                                        LOCALIZAÇÃO
+                                    </span>
 
-                        {/* Informações */}
-                        <div className="mt-10 border-t border-white/10 font-mono text-sm">
+                                    <span>
+                                        Brasil
+                                    </span>
 
+                                </div>
 
-                            <div className="flex justify-between py-4 border-b border-white/10">
+                                <div className="flex justify-between py-4 border-b border-white/10">
 
-                                <span className="text-gray-500 tracking-widest">
-                                    LOCALIZAÇÃO
-                                </span>
+                                    <span className="text-gray-500 tracking-widest">
+                                        CURSANDO
+                                    </span>
 
-                                <span className="text-gray-200">
-                                    Brasil
-                                </span>
+                                    <span className="text-right">
+                                        Engenharia da Computação
+                                    </span>
 
-                            </div>
+                                </div>
 
+                                <div className="flex justify-between py-4">
 
+                                    <span className="text-gray-500 tracking-widest">
+                                        ESPECIALIDADES
+                                    </span>
 
+                                    <span className="text-right">
+                                        Sistemas Embarcados
+                                        <br />
+                                        Hardware
+                                        <br />
+                                        Robótica
+                                    </span>
 
-                            <div className="flex justify-between py-4 border-b border-white/10 gap-4">
-
-                                <span className="text-gray-500 tracking-widest">
-                                    ATUALMENTE
-                                </span>
-
-                                <span className="text-gray-200 text-right">
-                                    Estudante de Engenharia da Computação
-                                </span>
-
-                            </div>
-
-
-
-
-                            <div className="flex justify-between py-4 border-b border-white/10">
-
-                                <span className="text-gray-500 tracking-widest">
-                                    CURSANDO
-                                </span>
-
-                                <span className="text-gray-200 text-right">
-                                    Engenharia de Computação
-                                </span>
+                                </div>
 
                             </div>
 
+                            {/* Idiomas */}
+                            <div className="mt-10">
 
+                                <h3 className="mb-4 text-orange-500 tracking-widest">
+                                    IDIOMAS
+                                </h3>
 
+                                <div className="space-y-3">
 
-                            <div className="flex justify-between py-4 gap-4">
+                                    <div className="flex justify-between">
+                                        <span>Português</span>
+                                        <span className="text-gray-500">
+                                            Nativo
+                                        </span>
+                                    </div>
 
-                                <span className="text-gray-500 tracking-widest">
-                                    FOCO
-                                </span>
+                                    <div className="flex justify-between">
+                                        <span>Inglês</span>
+                                        <span className="text-gray-500">
+                                            Intermediário
+                                        </span>
+                                    </div>
 
-                                <span className="text-gray-200 text-right">
-                                    Sistemas Embarcados
-                                    <br />
-                                    Hardware
-                                    <br />
-                                    Robótica
-                                </span>
+                                    <div className="flex justify-between">
+                                        <span>Japonês</span>
+                                        <span className="text-gray-500">
+                                            Básico
+                                        </span>
+                                    </div>
+
+                                </div>
 
                             </div>
 
+                            {/* Links */}
+                            <div className="mt-10">
+
+                                <h3 className="mb-4 text-orange-500 tracking-widest">
+                                    LINKS
+                                </h3>
+
+                                <div className="space-y-3">
+
+                                    <a
+                                        href="https://github.com/LucianoBellaver"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="block text-gray-300 transition hover:text-orange-500"
+                                    >
+                                        GitHub →
+                                    </a>
+
+                                    <a
+                                        href="https://www.linkedin.com/in/luciano-bellaver/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="block text-gray-300 transition hover:text-orange-500"
+                                    >
+                                        LinkedIn →
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                            {/* Ferramentas */}
+                            <div className="mt-10">
+
+                                <h3 className="mb-4 text-orange-500 tracking-widest">
+                                    FERRAMENTAS
+                                </h3>
+
+                                <div className="space-y-6">
+
+                                    {/* Sistemas */}
+                                    <div>
+
+                                        <p className="mb-3 text-xs uppercase tracking-widest text-gray-500">
+                                            Sistemas
+                                        </p>
+
+                                        <div className="flex flex-wrap gap-2">
+
+                                            {[
+                                                "Linux",
+                                                "Docker",
+                                                "Git",
+                                            ].map((tool) => (
+
+                                                <span
+                                                    key={tool}
+                                                    className="
+                                                        rounded
+                                                        border
+                                                        border-white/20
+                                                        px-3
+                                                        py-1
+                                                        text-xs
+                                                        text-gray-300
+                                                    "
+                                                >
+                                                    {tool}
+                                                </span>
+
+                                            ))}
+
+                                        </div>
+
+                                    </div>
+
+                                    {/* Embarcados */}
+                                    <div>
+
+                                        <p className="mb-3 text-xs uppercase tracking-widest text-gray-500">
+                                            Embarcados
+                                        </p>
+
+                                        <div className="flex flex-wrap gap-2">
+
+                                            {[
+                                                "C",
+                                                "ESP32",
+                                                "Arduino",
+                                                "Raspberry Pi",
+                                                "Klipper",
+                                            ].map((tool) => (
+
+                                                <span
+                                                    key={tool}
+                                                    className="
+                                                        rounded
+                                                        border
+                                                        border-white/20
+                                                        px-3
+                                                        py-1
+                                                        text-xs
+                                                        text-gray-300
+                                                    "
+                                                >
+                                                    {tool}
+                                                </span>
+
+                                            ))}
+
+                                        </div>
+
+                                    </div>
+
+                                    {/* CAD */}
+                                    <div>
+
+                                        <p className="mb-3 text-xs uppercase tracking-widest text-gray-500">
+                                            CAD
+                                        </p>
+
+                                        <div className="flex flex-wrap gap-2">
+
+                                            <span
+                                                className="
+                                                    rounded
+                                                    border
+                                                    border-white/20
+                                                    px-3
+                                                    py-1
+                                                    text-xs
+                                                    text-gray-300
+                                                "
+                                            >
+                                                Fusion 360
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                    {/* Desenvolvimento Web */}
+                                    <div>
+
+                                        <p className="mb-3 text-xs uppercase tracking-widest text-gray-500">
+                                            Desenvolvimento Web
+                                        </p>
+
+                                        <div className="flex flex-wrap gap-2">
+
+                                            <span
+                                                className="
+                                                    rounded
+                                                    border
+                                                    border-white/20
+                                                    px-3
+                                                    py-1
+                                                    text-xs
+                                                    text-gray-300
+                                                "
+                                            >
+                                                Next.js
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
 
                         </div>
 
-
                     </div>
-
-
-
-
-
-
-
-
 
                     {/* Bio */}
-                    <div className="max-w-3xl pt-2">
+                    <div className="max-w-3xl">
 
-                        <div className="space-y-10 text-gray-300 text-xl leading-9">
+                        <div className="space-y-8 text-lg leading-8 text-gray-300">
 
                             <p>
-                                Sou estudante de Engenharia da Computação e tenho como principal objetivo desenvolver sistemas que unem software e hardware para resolver problemas do mundo real.
+                                Sou estudante de Engenharia da Computação e atuo profissionalmente com manutenção e reparo de impressoras 3D por meio da minha assistência técnica. Meu principal objetivo é desenvolver sistemas que integrem software e hardware para resolver problemas do mundo real.
                             </p>
 
                             <p>
-                                Meus principais interesses estão em sistemas embarcados, desenvolvimento de hardware, robótica e projetos open source. Tenho grande curiosidade em compreender o funcionamento da tecnologia em seus níveis mais fundamentais, desde eletrônica e firmware até sistemas completos.
+                                Minha experiência prática envolve diagnóstico, manutenção, calibração e otimização de equipamentos de manufatura aditiva, complementando minha formação acadêmica e proporcionando contato diário com eletrônica, mecânica, firmware e sistemas embarcados.
                             </p>
 
                             <p>
-                                Atualmente desenvolvo projetos pessoais envolvendo impressão 3D, automação, plataformas embarcadas e experimentação com hardware, buscando constantemente expandir meus conhecimentos por meio da prática.
+                                Paralelamente, desenvolvo projetos pessoais envolvendo sistemas embarcados, automação, infraestrutura, impressão 3D e desenvolvimento de hardware. Utilizo este espaço para documentar experimentos, compartilhar aprendizados e registrar a evolução dos projetos que construo.
                             </p>
 
                             <p>
-                                Meu objetivo de longo prazo é atuar no desenvolvimento de tecnologias avançadas voltadas para robótica e sistemas espaciais, contribuindo para projetos que ampliem os limites da engenharia e da exploração tecnológica.
+                                Meu objetivo de longo prazo é atuar no desenvolvimento de tecnologias avançadas nas áreas de sistemas embarcados, robótica e exploração espacial, contribuindo para projetos que conectem engenharia, inovação e tecnologia de ponta.
                             </p>
 
                         </div>
 
                     </div>
 
-
                 </div>
-
-
-
-
-
-
-
-
-
-                {/* Áreas */}
-                <div className="mt-32">
-
-                    <h2 className="font-mono text-orange-500 mb-8">
-                        ÁREAS DE INTERESSE
-                    </h2>
-
-                    <div className="grid md:grid-cols-4 gap-4">
-
-                        {[
-                            "Sistemas Embarcados",
-                            "Projeto de Hardware",
-                            "Robótica",
-                            "Tecnologias Espaciais",
-                        ].map((item) => (
-
-                            <div
-                                key={item}
-                                className="
-                                    border
-                                    border-white/20
-                                    p-5
-                                    rounded
-                                    hover:border-orange-500
-                                    transition
-                                "
-                            >
-
-                                <p className="text-sm text-gray-300">
-                                    {item}
-                                </p>
-
-                            </div>
-
-                        ))}
-
-                    </div>
-
-                </div>
-
 
             </section>
 
